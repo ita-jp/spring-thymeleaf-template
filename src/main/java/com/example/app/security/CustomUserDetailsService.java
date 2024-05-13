@@ -22,6 +22,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .map(r -> User.builder()
                         .username(r.username())
                         .password(r.password())
+                        .disabled(!r.enabled())
                         .authorities(List.of())
                         .build()
                 )
