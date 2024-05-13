@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout.html}">
+<head>
+    <meta charset="utf-8"/>
+    <title>Sign out</title>
+</head>
+<body>
+<section layout:fragment="content" class="mx-auto">
+    <div class="container page">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-xs-12">
+                <h1 class="text-xs-center">Sign out</h1>
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit" class="btn btn-primary">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
