@@ -13,3 +13,19 @@ CREATE TABLE authorities
     CONSTRAINT fk_authorities_users FOREIGN KEY (user_id) REFERENCES users (id)
 );
 CREATE UNIQUE INDEX ix_auth_username ON authorities (user_id, authority);
+
+CREATE TABLE books
+(
+    id          BIGINT      NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title       VARCHAR(50) NOT NULL,
+    author      VARCHAR(50) NOT NULL,
+    description TEXT,
+    isbn        VARCHAR(13) NOT NULL UNIQUE
+);
+
+CREATE TABLE physical_copies (
+    id          BIGINT      NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    book_id     BIGINT      NOT NULL,
+    location    VARCHAR(50) NOT NULL,
+    CONSTRAINT fk_physical_copies_books FOREIGN KEY (book_id) REFERENCES books (id)
+);

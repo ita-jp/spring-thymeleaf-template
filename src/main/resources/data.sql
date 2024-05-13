@@ -11,3 +11,4 @@ VALUES (1, 'ADMIN')
      , (3, 'USER')
      , (4, 'USER')
 ;
+
