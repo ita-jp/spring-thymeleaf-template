@@ -17,5 +17,12 @@ public class UserService {
     public void register(String username, String rawPassword) {
         String encodedPassword = passwordEncoder.encode(rawPassword);
         userRepository.insert(username, encodedPassword, true);
+        userRepository.selectByUsername(username)
+                .ifPresentOrElse(
+                        user -> userRepository.insertAuthorities(user.id(), "USER"),
+                        () -> {
+                            throw new IllegalArgumentException("User not found");
+                        }
+                );
     }
 }

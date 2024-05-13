@@ -1,7 +1,15 @@
 CREATE TABLE users
 (
-    id       BIGINT      NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id       BIGINT      NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(68) NOT NULL,
     enabled  BOOLEAN     NOT NULL
 );
+
+CREATE TABLE authorities
+(
+    user_id   BIGINT      NOT NULL,
+    authority VARCHAR(50) nOT NULL,
+    CONSTRAINT fk_authorities_users FOREIGN KEY (user_id) REFERENCES users (id)
+);
+CREATE UNIQUE INDEX ix_auth_username ON authorities (user_id, authority);
