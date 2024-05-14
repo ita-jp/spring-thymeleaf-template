@@ -18,9 +18,7 @@ CREATE TABLE books
 (
     id          BIGINT      NOT NULL PRIMARY KEY AUTO_INCREMENT,
     title       VARCHAR(50) NOT NULL,
-    author      VARCHAR(50) NOT NULL,
-    description TEXT,
-    isbn        VARCHAR(13) NOT NULL UNIQUE
+    author      VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE physical_copies (

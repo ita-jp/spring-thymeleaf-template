@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout.html}">
+<head>
+    <meta charset="utf-8"/>
+    <title>書籍登録</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <h1 class="mb-3 mt-3" th:text="*{title}"></h1>
+    <div th:replace="admin/book/_book" th:object="${book}"></div>
+</section>
+</body>
+</html>
