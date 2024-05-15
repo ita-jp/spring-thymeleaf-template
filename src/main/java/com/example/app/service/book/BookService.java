@@ -1,6 +1,6 @@
 package com.example.app.service.book;
 
-import com.example.app.repository.user.BookRepository;
+import com.example.app.repository.book.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

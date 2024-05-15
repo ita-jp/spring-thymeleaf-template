@@ -1,4 +1,4 @@
-package com.example.app.repository.user;
+package com.example.app.repository.book;
 
 import com.example.app.service.book.Book;
 import org.apache.ibatis.annotations.Insert;
