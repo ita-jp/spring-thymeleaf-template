@@ -10,7 +10,7 @@
 <section layout:fragment="content">
     <h1 class="mb-3 mt-3">書籍登録</h1>
     <form th:action="@{/admin/books}" method="post" th:object="${form}">
-        <div th:replace="admin/book/_form"></div>
+        <div th:replace="admin/book/_input"></div>
         <button type="submit" class="btn btn-primary mb-3">登録</button>
         <a th:href="@{/admin/books}" class="btn btn-secondary mb-3">戻る</a>
     </form>
